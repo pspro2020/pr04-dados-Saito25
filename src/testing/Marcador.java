@@ -16,19 +16,15 @@ public class Marcador {
         return totalRolls;
     }
 
-    public void setDiceValues(int i) {
-        synchronized (this) {
-            diceValues[i] += 1;
-        }
+    public synchronized void setDiceValues(int i) {
+        diceValues[i] += 1;
     }
 
     public void setTotalRolls(int totalRolls) {
         this.totalRolls = totalRolls;
     }
 
-    public void addTotalRoll() {
-        synchronized (this) {
-            totalRolls++;
-        }
+    public synchronized void addTotalRoll() {
+        totalRolls++;
     }
 }
